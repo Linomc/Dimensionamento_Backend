@@ -35,6 +35,7 @@ def trata_dados(meses):
     return minimo, Q1, Q2, Q3, maximo, consumo_mensal
 
 # %%
+# teste da função
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,1590,1217]
 consumo_mensal, minimo, Q1, Q2, Q3, maximo = trata_dados(conta_energia)
 print (consumo_mensal, minimo, Q1, Q2, Q3, maximo)
@@ -64,6 +65,7 @@ def trata_dados_pd (dados):
     return minimo, um_quarto, metade, tres_quartos, maximo, vetor_df
 
 # %%
+# teste da Função recriada com as bibliotecas Numpy, statistic e pandas
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,1590,1217]
 quartis = trata_dados_stat(conta_energia)
 Q1 = trata_dados_np(conta_energia)
@@ -86,6 +88,7 @@ def retira_outliers(meses):
     return lista_limpa
 
 # %%
+# teste da função 2
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,1590,1217]
 lista_limpa = retira_outliers(conta_energia)
 print (lista_limpa)
@@ -103,6 +106,7 @@ def lista_limpa_ordenada(meses):
     return consumo_limpo
 
 # %%
+# teste da função 3
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,1590,1217]
 lista_ordenada = lista_limpa_ordenada(conta_energia)
 print (lista_ordenada)
@@ -130,6 +134,7 @@ def distribuicao (meses):
     return distribuicao
 
 # %%
+# teste da função 04
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,1146,101,1590,1217]
 gaussiana = distribuicao(conta_energia)
 print (gaussiana)
@@ -140,6 +145,7 @@ print (gaussiana)
 # - criado 06/03
 
 # %%
+# essa função ta conceitualmente errada.. 24/03. ainda não repensei essa saída
 import matplotlib.pyplot as plt
 def histograma(meses):
     resumo_conjunto = distribuicao(meses)
@@ -181,6 +187,8 @@ print (gaussiana)
 #     3. A função (trata_dados) possui 5 saídas **(Q1, Q3, AIQ, Consumo normalizados, outliers quando houver)**
 
 # %%
+# 24/03 - vou refazer essa função se necessario, usando os metodos de uma das bibliotecas: Numpy, Pandas ou Statistic
+# obs. Na epoca que criei essa função não conhecia os metodos
 def medidas_centralidade (meses):
     consumo_anual_limpo = retira_outliers(meses)
     potencia_total = float(sum(consumo_anual_limpo))
@@ -193,6 +201,7 @@ def medidas_centralidade (meses):
     return (media, dm, dp_consumo)
 
 # %%
+# testa funcao 07
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,590,617]
 media, dm, dp = medidas_centralidade(conta_energia)
 print (media, dm, dp)
@@ -208,6 +217,7 @@ print (media, dm, dp)
 # > Essa função 03, **retorna a POTÊNCIA PICO Cheia**, a partir da soma das medidas de **Centralidade + Dispersão**
 
 # %%
+# 25/03 - Obs. recebera os dataframes de um banco de dados, a partir do database das estacoes meteorologicas, sera criada a funcao que definirá o estação. 
 def pot_pico (meses, estacao):
     X,dm,dp = medidas_centralidade(meses)
     media_estacao = round(sum(estacao)/len(estacao),2)
@@ -216,7 +226,7 @@ def pot_pico (meses, estacao):
     return Wp_media
 
 # %%
-
+# teste da funcao
 # referencia d dados, estação: jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez, media aritmetica
 estacao_caxias = [5.86,6.05,4.96,4.36,3.60,3.38,3.37,4.17,4.35,4.86,4.87,5.61]
 conta_energia = [1532,1472,1553,1479,1486,1206,1454,1552,146,101,590,617]
