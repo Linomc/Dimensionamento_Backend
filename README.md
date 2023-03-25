@@ -11,3 +11,7 @@ processamentos mais adequados para cada uma das categorias que serão desenvolvi
 máquina (MACHINE LEARNING) através dos dados obtidos pelos monitoramento das usinas fotovoltaicas já existentes.
 A saída é o dimensionamento do gerador fotovoltaico. 
 
+OBJETIVOS PRIMÁRIOS
+1. Desenvolver uma metodologia de dimensionamento fotovoltaico para Unidades Consumidoras (UC) de Baixa Tensão (BT), onde qualquer pessoa jurídica ou especialista possa ter acesso a esse método para dimensionar novas usinas fotovoltaicas, com foco na otimização do GFV.
+2. Contribuir para a mudança da matriz energética mundial, aumentando as ferramentas disponíveis para dimensionar geradores fotovoltaicos (GFV) em residências e comércios de pequeno porte.
+3. Analisar, tratar e informar por meio da estatística e tecnologia da informação a partir de dados brutos, questões úteis, sem que os usuários de tais sistemas (dimensionamento de sistemas de energia solar), sejam especialistas em dimensionamento de sistemas solares ou experientes no setor de energias renováveis.
